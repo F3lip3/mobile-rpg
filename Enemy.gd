@@ -13,10 +13,10 @@ func set_hp(new_hp):
 	hp = new_hp
 	hpLabel.text = str(hp) + "hp"
 
-func attack(target) -> void:
+func attack(_target) -> void:
 	yield(get_tree().create_timer(0.4), "timeout")
 	animation.play("Attack")
-	self.target = target
+	self.target = _target
 	yield(animation, "animation_finished")
 	self.target = null
 	emit_signal("end_turn")

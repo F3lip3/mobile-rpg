@@ -8,7 +8,7 @@ func _on_pressed():
 	var player = main.find_node("PlayerStats")
 	if enemy != null and player != null:
 		create_slash(enemy.global_position)
-		enemy.take_damage(4)
+		enemy.take_damage(1)
 		player.mp += 2
 		player.ap -= 1
 
