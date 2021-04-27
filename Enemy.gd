@@ -15,11 +15,10 @@ func set_hp(new_hp):
 
 func attack(target) -> void:
 	yield(get_tree().create_timer(0.4), "timeout")
-	self.target = target
 	animation.play("Attack")
-	self.target = null
+	self.target = target
 	yield(animation, "animation_finished")
-	target.hp -= 3
+	self.target = null
 	emit_signal("end_turn")
 
 func deal_damage():
